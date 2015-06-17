@@ -1,15 +1,21 @@
+
+
 #include<iostream>
 using namespace std;
 
+//class TaxPerson to calculate the total cost with tax 
 class TaxPerson {
     int cost_in_cents;
 	int basic_lux_item;  // 1 = lux item and 0 = basic item
 	float total_tax;
   public:
-    TaxPerson (int,int);
+    TaxPerson (int,int); // constructor for the class TaxPerson
     void get(){
     	cout << cost_in_cents <<endl << basic_lux_item;
     }
+    
+    // tax_cal function returns -1 for the cost not being valid, -2 for the type of item being invalid and the total cost
+    // based on the given conditions,
 	float tax_cal (){
 	float tax;
     if(cost_in_cents <= 0){
@@ -38,6 +44,7 @@ TaxPerson::TaxPerson (int cost, int item) {
   basic_lux_item = item;
 }
 
+// main function with object of class to verify the output -- unit testing code in unittest.cpp file
 /*int main(){
 	
   float item_tax;
